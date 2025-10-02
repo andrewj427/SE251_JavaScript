@@ -28,7 +28,7 @@ ball.w = 20
 ball.h = 20
 ball.vx = -2
 ball.vy = -2
-ball.color = `black`
+ball.color = `white`
 
 function main()
 {
