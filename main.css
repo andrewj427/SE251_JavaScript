@@ -17,7 +17,11 @@ a:link{
     text-decoration: none;
     font-weight: bold;
     padding-right: 30px;
+    
 }
 a:hover{
     text-decoration: underline;
+}
+a:visited{
+    color: whitesmoke;
 }
