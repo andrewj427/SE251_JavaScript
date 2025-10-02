@@ -13,12 +13,14 @@ var p1 = new Box();
 p1.w = 20
 p1.h = 150
 p1.x = 0 + p1.w/2
+p1.color = 'red'
 
 //p2 setup
 var p2 = new Box();
 p2.w = 20
 p2.h = 150
 p2.x = c.width - p2.w/2
+p2.color = 'blue'
 
 //ball setup
 var ball = new Box();
@@ -83,19 +85,19 @@ function main()
         p2.y = c.height-p2.h/2
     }
     //ball collision 
-    if(ball.x < 0)
+    if(ball.x < 0) //left side
     {
         ball.x = c.width/2
         ball.y  =c.height/2
-        ball.vx =  Math.random()*5
+        ball.vx =  Math.random()*7
         ball.vy =  Math.random()*3 //set vy a bit lower so the ball always has more x movement than y
 
     }
-    if(ball.x > c.width)
+    if(ball.x > c.width) //right side
     {
         ball.x = c.width/2
         ball.y = c.height/2
-        ball.vx =  Math.random()*5
+        ball.vx =  Math.random()*7
         ball.vy =  Math.random()*3
 
     }
