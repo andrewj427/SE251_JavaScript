@@ -1,10 +1,8 @@
 //canvas and context
 var c = document.querySelector(`#pong`)
 var ctx = c.getContext(`2d`)
-
 //timer to make the game run at 60fps
 var timer = setInterval(main, 1000/60)
-
 //global friction variable
 var fy = .97
 var players = []
@@ -17,7 +15,6 @@ for(let i=0;i<2;i++) {
     players[i].pad.h = 150;
 
 }
-
 //create array for pads
 var pad = []
 //iterate through and store players pads to array
@@ -26,10 +23,8 @@ for(let i=0;i<2;i++) {
 }
 pad[0].x = 0 + pad[0].w/2
 pad[0].color = 'red'
-
 pad[1].x = c.width - pad[1].w/2
 pad[1].color = 'blue'
-
 //ball setup
 var ball = new Box();
 ball.w = 20
@@ -37,32 +32,26 @@ ball.h = 20
 ball.vx = -2
 ball.vy = -2
 ball.color = `white`
-
 //get scoreboard element
 var scoreboard = document.querySelectorAll(`#score div`)
 console.log(scoreboard)
-
 function main()
 {
     //erases the canvas
     ctx.clearRect(0,0,c.width,c.height)
-    
     //players[0] accelerates when key is pressed 
     if(keys[`w`])
     {
        pad[0].vy += -pad[0].force
     }
-
     if(keys[`s`])
     {
         pad[0].vy += pad[0].force
     }
-
     if(keys['ArrowUp'])
     {
         pad[1].vy += -pad[1].force
     }
-
     if(keys['ArrowDown'])
     {
         pad[1].vy += pad[1].force
@@ -73,12 +62,8 @@ function main()
     //player movement
     pad[0].move();
     pad[1].move();
-
     //ball movement
     ball.move()
-
-
-
     for(let i=0;i<2;i++) {
         if(pad[i].y < 0 + pad[i].h/2) {
             pad[i].y = 0+pad[i].h/2
@@ -87,8 +72,6 @@ function main()
             pad[i].y = c.height - pad[i].h/2
         }
     }
-
-    
     //ball collision 
     if(ball.x < 0) //left side, p2 should score
     {
@@ -121,9 +104,7 @@ function main()
         ball.vy = -ball.vy
        
     }
-
     //players[0] with ball collision
-
     for(let i=0;i<2;i++)
     {
         if(ball.collide(pad[i]))
@@ -138,14 +119,10 @@ function main()
          ball.vx = -ball.vx;
         }
     }
-
-    
-
     //draw the objects - use for loo pfor simplicity
     for(let i=0;i<2;i++) {
         pad[i].draw()
         scoreboard[i].innerHTML = `${players[i].name}: ${players[i].score}`
     }
-    ball.draw()
-    
+    ball.draw()   
 }
