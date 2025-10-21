@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>input</legend>
+            <input type="text" placeholder="first" class="first"><br>
+            <input type="text" placeholder="middle" class="middle"><br>
+            <input type="text" placeholder="last" class="last"><br>
+            <button>Submit</button>
+        </fieldset>
+    </form>
+    <div class="output">
+        <div>output</div>
+        <p class="first"></p>
+        <p class="middle"></p>
+        <p class="last"></p>
+    </div>
+    <script>
+        let fullName = {
+            "first":"",
+            "middle":"",
+            "last":""
+        }
+
+        let button = document.querySelector('button')
+        button.addEventListener('click', e=>{
+            e.preventDefault()
+            for(let i in fullName) {
+                fullName[i] = document.querySelector(`.${i}`).value
+            document.querySelector(`p.${i}`).innerHTML = fullName[i]
+            document.querySelector(`p.${i}`).style.border = "1px solid black"
+            document.querySelector(`p.${i}`).addEventListener(`click`,e=>{
+                document.querySelector(`p.${i}`).innerHTML = `clicked`
+            })
+            }
+            console.log(fullName)
+            
+        })
+    </script>
+</body>
+</html>
