@@ -18,7 +18,6 @@ button.addEventListener(`click`, e=>{
     // v this does the same thing as the above if else block v
     //options.style.display = (options.style.display === `none`)?options.style.display = `block`:options.style.display=`none`
 })
-
 colors[0].addEventListener(`input`, e=>{
     body.style.backgroundColor = e.target.value
     e.target.nextElementSibling.value = e.target.value
