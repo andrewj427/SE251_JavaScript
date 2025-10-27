@@ -76,10 +76,10 @@ straight[i].addEventListener('keydown', e=> {
 })
 }
 
-
+let ops = document.querySelectorAll('.op')
 let stroke = document.querySelectorAll('.stroke')
 for(let i=0;i<2;i++) {
     stroke[i].addEventListener('input', e=> {
-        console.log(`the color of p${i + 1}'s stroke is ${e.target.value}`)
+        ops[i].style.backgroundColor = e.target.value
     })
 }
