@@ -90,5 +90,5 @@ let canvas = document.querySelector('.canvdiv')
 let canvColor = document.querySelector('.canv')
 
 canvColor.addEventListener("input", e=>
-    canvas.style.backgroundColor = e.target.value
+    canvas.style.backgroundColor = e.target.value 
 )
