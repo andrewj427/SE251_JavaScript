@@ -24,6 +24,8 @@ sidesdiv.style.display = (sidesdiv.style.display === `none`)?sidesdiv.style.disp
 -----------*/
 let fill = document.querySelectorAll('.fill')
 for(let i=0; i<2; i++) {
+    fill[i].value = player[i].pad.fill
+    fill[i].nextElementSibling.innerHTML = player[i].pad.fill
     fill[i].addEventListener('input', e=> {
     e.target.nextElementSibling.innerHTML = e.target.value
     o[i].fill = e.target.value
@@ -79,8 +81,12 @@ straight[i].addEventListener('keydown', e=> {
 let ops = document.querySelectorAll('.op')
 let stroke = document.querySelectorAll('.stroke')
 for(let i=0;i<2;i++) {
+    stroke[i].value = player[i].pad.stroke
+    stroke[i].nextElementSibling.innerHTML = player[i].pad.stroke
     stroke[i].addEventListener('input', e=> {
-        ops[i].style.backgroundColor = e.target.value
+        player[i].pad.stroke = e.target.value
+    e.target.nextElementSibling.innerHTML = e.target.value
+
     })
 }
 
