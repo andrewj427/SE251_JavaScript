@@ -33,22 +33,28 @@ submitbtn.addEventListener(`click`, e=> {
     if(person.fname != null && nameRegex.test(person.fname)) {
         fnameInput.nextElementSibling.innerText = ""
         fnamevalid = true
+        fnameInput.parentElement.style.color="black"
         
     }
     else{
         fnameInput.nextElementSibling.innerText = "*Please enter a valid first name*"
         fnameInput.nextElementSibling.style.color = "red"
+        fnameInput.parentElement.style.color = "red"
         valid = false
+
     }
     if(person.lname != null && nameRegex.test(person.lname)) {
         lnameInput.nextElementSibling.innerText = ""
         lnamevalid = true
+        lnameInput.parentElement.style.color="black"
+
         
 
     }
     else{
         lnameInput.nextElementSibling.innerText = "*Please enter a valid last name*"
         lnameInput.nextElementSibling.style.color = "red"
+        lnameInput.parentElement.style.color = "red"
         valid = false
     }
     if(person.email === person.confemail){
@@ -58,14 +64,19 @@ submitbtn.addEventListener(`click`, e=> {
             emailInput.nextElementSibling.innerText = ""
             confemailInput.nextElementSibling.innerText = ""
             emailvalid = true
+            emailInput.parentElement.style.color="black"
+            confemailInput.parentElement.style.color="black"
+
             
 
         }
         else {
-            emailInput.nextElementSibling.innerText = "*"
+            emailInput.nextElementSibling.innerText = "*Please add a valid email*"
             emailInput.nextElementSibling.style.color = "red"
-            confemailInput.nextElementSibling.innerText = "*"
+            confemailInput.nextElementSibling.innerText = "*Email and confirm email must match*"
             confemailInput.nextElementSibling.style.color = "red"
+            emailInput.parentElement.style.color = "red"
+            confemailInput.parentElement.style.color = "red"
             valid = false
         }
     }
@@ -74,12 +85,15 @@ submitbtn.addEventListener(`click`, e=> {
         emailInput.nextElementSibling.style.color = "red"
         confemailInput.nextElementSibling.innerText = "*Email and Confirm Email must match*"
         confemailInput.nextElementSibling.style.color = "red"
+        emailInput.parentElement.style.color = "red"
+        confemailInput.parentElement.style.color = "red"
         valid = false
     }
 
     if(person.phone != null && phoneRegex.test(person.phone)) {
         phoneInput.nextElementSibling.innerText = ""
         phonevalid = true
+        phoneInput.parentElement.style.color="black"
         
 
     }
@@ -87,6 +101,7 @@ submitbtn.addEventListener(`click`, e=> {
         phoneInput.nextElementSibling.innerText = "*Please enter a valid phone number without any dashes or spaces (ex 1234567890)*"
         phoneInput.nextElementSibling.style.color = "red"
         valid=false
+        phone.parentElement.style.color="red"
     }
 
 
